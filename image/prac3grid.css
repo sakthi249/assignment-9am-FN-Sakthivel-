@@ -1,0 +1,18 @@
+.box{
+background-color: aquamarine;
+height: 70px;
+width: 70px;
+padding: 20px;
+
+
+
+} 
+.grid{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr ;
+    padding: 30px;
+
+
+
+}

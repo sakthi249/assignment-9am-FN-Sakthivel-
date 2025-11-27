@@ -1,0 +1,26 @@
+.mav{
+    height: 200px;
+    width: 1000px;
+    background-color: gold;
+    
+
+
+}
+.nnn{
+     height: 400px;
+     width: 1000px;
+     background-color: deeppink;
+
+
+
+
+
+}
+.nav{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    
+
+    
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="ba">Lorem ipsum dolor sit amet.</p>
+    <button class="btnn" onclick="changetext()">
+      Click me to change the text colour
+    </button>
+    <button class="btn" onclick="changecolour()">
+      Click me to change the text colour
+    </button>
+    <script>
+      function changetext() {
+        document.getElementById("ba").innerText = "He is a good man";
+      }
+      function changecolour() {
+        document.getElementById("ba").style.color = "blue";
+      }
+    </script>
+  </body>
+</html>

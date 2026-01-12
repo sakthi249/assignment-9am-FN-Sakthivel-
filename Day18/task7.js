@@ -1,0 +1,14 @@
+let num1 = 10;
+let num2 = 5;
+num2 += 6;
+num2 = 34;
+let result;
+result = num1 + num2;
+console.log("Addition:", result);
+result = num1 - num2;
+console.log("Subtraction:", result);
+result = num1 * num2;
+console.log("Multiplication:", result);
+result = num1 / num2;
+console.log("Division:", result);
+console.log("Division:", num2);

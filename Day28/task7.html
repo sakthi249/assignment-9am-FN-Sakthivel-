@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Validation Errors</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    input { display: block; margin: 10px 0; padding: 10px; width: 250px; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <h2>Login Form Validation 🔐</h2>
+
+  <form id="loginForm">
+    <input type="text" id="email" placeholder="Email" />
+    <p id="emailErr" class="error"></p>
+
+    <input type="password" id="pass" placeholder="Password" />
+    <p id="passErr" class="error"></p>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <h3 id="successMsg"></h3>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const pass = document.getElementById("pass").value.trim();
+
+      const emailErr = document.getElementById("emailErr");
+      const passErr = document.getElementById("passErr");
+      const successMsg = document.getElementById("successMsg");
+
+      emailErr.innerText = "";
+      passErr.innerText = "";
+      successMsg.innerText = "";
+
+      let isValid = true;
+
+      if (email === "") {
+        emailErr.innerText = "Email is required!";
+        isValid = false;
+      } else if (!email.includes("@")) {
+        emailErr.innerText = "Email must contain @";
+        isValid = false;
+      }
+
+      if (pass === "") {
+        passErr.innerText = "Password is required!";
+        isValid = false;
+      } else if (pass.length < 6) {
+        passErr.innerText = "Password must be 6+ characters!";
+        isValid = false;
+      }
+
+      if (isValid) {
+        successMsg.innerText = "✅ Login Successful!";
+        successMsg.style.color = "green";
+      }
+    });
+  </script>
+
+</body>
+</html>

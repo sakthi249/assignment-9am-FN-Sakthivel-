@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    button { padding: 10px 15px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Shopping Cart using Spread Operator 🛒</h2>
+
+  <button id="addApple">Add Apple</button>
+  <button id="addMango">Add Mango</button>
+  <button id="clear">Clear Cart</button>
+
+  <h3>Cart Items:</h3>
+  <ul id="cartList"></ul>
+
+  <script>
+    let cart = [];
+
+    const cartList = document.getElementById("cartList");
+
+    function renderCart() {
+      cartList.innerHTML = "";
+      cart.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        cartList.appendChild(li);
+      });
+    }
+
+    document.getElementById("addApple").addEventListener("click", () => {
+      cart = [...cart, "Apple"];
+      renderCart();
+    });
+
+    document.getElementById("addMango").addEventListener("click", () => {
+      cart = [...cart, "Mango"];
+      renderCart();
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+      cart = [];
+      renderCart();
+    });
+  </script>
+
+</body>
+</html>

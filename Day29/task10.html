@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Unlimited Arguments using Rest Operator 🔢</h2>
+
+  <button id="btn">Calculate Total</button>
+  <p id="output"></p>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const output = document.getElementById("output");
+
+    function totalSum(...numbers) {
+      let sum = 0;
+      for (let num of numbers) {
+        sum += num;
+      }
+      return sum;
+    }
+
+    btn.addEventListener("click", () => {
+      const result = totalSum(10, 20, 30, 40, 50);
+      output.textContent = "Total = " + result;
+    });
+  </script>
+</body>
+</html>

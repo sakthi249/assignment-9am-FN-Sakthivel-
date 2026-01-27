@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ctrl + S Shortcut</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Keyboard Shortcut (Ctrl + S) 💾</h2>
+  <p>Press <b>Ctrl + S</b> and check the message.</p>
+
+  <h3 id="msg"></h3>
+
+  <script>
+    const msg = document.getElementById("msg");
+
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "s") {
+        e.preventDefault(); 
+        msg.textContent = " Saved (Fake Save) ";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>setTimeout Callback</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Callback using setTimeout</h2>
+  <button id="btn">Run Callback</button>
+  <p id="msg"></p>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const msg = document.getElementById("msg");
+
+    function doAfter2Seconds(callback) {
+      setTimeout(() => {
+        callback("Callback executed after 2 seconds");
+      }, 2000);
+    }
+
+    btn.addEventListener("click", () => {
+      msg.textContent = "Waiting......";
+
+      doAfter2Seconds((text) => {
+        msg.textContent = text;
+      });
+    });
+  </script>
+
+</body>
+</html>

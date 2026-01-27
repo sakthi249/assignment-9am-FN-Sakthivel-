@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Error Finding Quiz App 🧠</h2>
+
+  <p id="question"></p>
+  <button class="opt">2</button>
+  <button class="opt">4</button>
+  <button class="opt">6</button>
+
+  <p id="result"></p>
+
+  <script>
+    const question = document.getElementById("question");
+    question.innerText = "What is 2 + 2 ?";
+
+    const result = document.getElementById("result");
+    const options = document.querySelectorAll(".opt");
+
+    // Logical bug
+    options.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (btn.innerText === "6") {
+          result.innerText = "Correct ";
+        } else {
+          result.innerText = "Wrong ";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

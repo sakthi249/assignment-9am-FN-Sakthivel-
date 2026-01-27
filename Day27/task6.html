@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    button { padding: 10px 15px; margin: 5px; }
+    h1 { font-size: 40px; }
+  </style>
+</head>
+<body>
+
+  <h2>Counter App 🔢</h2>
+  <h1 id="count">0</h1>
+
+  <button id="plus">+</button>
+  <button id="minus">-</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    let count = 0;
+    const countText = document.getElementById("count");
+
+    document.getElementById("plus").addEventListener("click", () => {
+      count++;
+      countText.textContent = count;
+    });
+
+    document.getElementById("minus").addEventListener("click", () => {
+      count--;
+      countText.textContent = count;
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+      count = 0;
+      countText.textContent = count;
+    });
+  </script>
+
+</body>
+</html>

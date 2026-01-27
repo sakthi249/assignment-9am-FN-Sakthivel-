@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Validation</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    input { padding: 10px; width: 250px; margin-top: 10px; }
+    p { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Input Validation Project ✅</h2>
+
+  <label>Enter your age:</label><br />
+  <input type="text" id="ageInput" placeholder="Example: 18" />
+
+  <p id="msg"></p>
+
+  <script>
+    const ageInput = document.getElementById("ageInput");
+    const msg = document.getElementById("msg");
+
+    ageInput.addEventListener("input", () => {
+      const age = Number(ageInput.value);
+
+      if (ageInput.value.trim() === "") {
+        msg.innerText = "";
+        return;
+      }
+
+      if (isNaN(age)) {
+        msg.innerText = "Please enter a number";
+        msg.style.color = "red";
+      } else if (age < 1) {
+        msg.innerText = "Age must be greater than 0";
+        msg.style.color = "red";
+      } else if (age >= 18) {
+        msg.innerText = "You are an Adult";
+        msg.style.color = "green";
+      } else {
+        msg.innerText = "You are a Minor";
+        msg.style.color = "orange";
+      }
+    });
+  </script>
+
+</body>
+</html>

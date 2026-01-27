@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body>
+
+  <h2>Keyboard Input Logger</h2>
+  <input type="text" id="inputBox" placeholder="Type here..." />
+
+  <script>
+    const inputBox = document.getElementById("inputBox");
+
+    inputBox.addEventListener("keydown", (event) => {
+      console.log("Key pressed:", event.key);
+    });
+  </script>
+
+</body>
+</html>

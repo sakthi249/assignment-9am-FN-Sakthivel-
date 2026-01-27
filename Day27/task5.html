@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clicked Text</title>
+</head>
+<body>
+
+  <h2>Click Any Button 👇</h2>
+
+  <button class="btn">Apple</button>
+  <button class="btn">Mango</button>
+  <button class="btn">Orange</button>
+
+  <p id="output">Clicked: </p>
+
+  <script>
+    const buttons = document.querySelectorAll(".btn");
+    const output = document.getElementById("output");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        output.textContent = "Clicked: " + btn.textContent;
+      });
+    });
+  </script>
+
+</body>
+</html>

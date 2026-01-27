@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Login Counter using Closure </h2>
+
+  <button id="loginBtn">Login</button>
+  <h3 id="msg">Logins: 0</h3>
+
+  <script>
+    function createLoginCounter() {
+      let logins = 0;
+
+      return function () {
+        logins++;
+        return logins;
+      };
+    }
+    const countLogin = createLoginCounter();
+    const loginBtn = document.getElementById("loginBtn");
+    const msg = document.getElementById("msg");
+    loginBtn.addEventListener("click", () => {
+      msg.textContent = "Logins: " + countLogin();
+    });
+  </script>
+
+</body>
+</html>

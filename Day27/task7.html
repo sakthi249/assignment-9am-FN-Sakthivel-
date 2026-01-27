@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover Menu</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    .menu {
+      width: 200px;
+      background: #eee;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .items {
+      display: none;
+      background: #ddd;
+      padding: 10px;
+    }
+    .items p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>document</h2>
+
+  <div class="menu" id="menuBox">
+    Hover Me
+    <div class="items" id="menuItems">
+      <p>Home</p>
+      <p>About</p>
+      <p>Contact</p>
+    </div>
+  </div>
+
+  <script>
+    const menuBox = document.getElementById("menuBox");
+    const menuItems = document.getElementById("menuItems");
+
+    menuBox.addEventListener("mouseenter", () => {
+      menuItems.style.display = "block";
+    });
+
+    menuBox.addEventListener("mouseleave", () => {
+      menuItems.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Closure Click Counter</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Closure Click Counter</h2>
+  <button id="btn">Click Me</button>
+  <h3 id="countText">Clicks: 0</h3>
+
+  <script>
+    function createClickCounter() {
+      let count = 0; 
+
+      return function () {
+        count++;
+        return count;
+      };
+    }
+
+    const counter = createClickCounter();
+
+    const btn = document.getElementById("btn");
+    const countText = document.getElementById("countText");
+
+    btn.addEventListener("click", () => {
+      countText.textContent = "Clicks: " + counter();
+    });
+  </script>
+
+</body>
+</html>

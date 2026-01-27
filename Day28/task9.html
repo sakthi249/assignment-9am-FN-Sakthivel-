@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Broken App</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Broken App 🛠️</h2>
+
+  <button id="btn">Click Count</button>
+  <h3 id="countText">0</h3>
+
+  <script>
+
+    let count = "0";
+
+    const btn = document.getElementById("btn");
+    const countText = document.getElementById("countText");
+
+    btn.addEventListener("click", () => {
+      count = count + 1; 
+      countText.innerText = count;
+    });
+  </script>
+
+</body>
+</html>

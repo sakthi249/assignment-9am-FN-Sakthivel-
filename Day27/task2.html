@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+  <style>
+    #text {
+      font-size: 24px;
+      color: black;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hover to Change Color</h2>
+  <p id="text">Hover on me </p>
+
+  <script>
+    const text = document.getElementById("text");
+
+    text.addEventListener("mouseenter", () => {
+      text.style.color = "red";
+    });
+
+    text.addEventListener("mouseleave", () => {
+      text.style.color = "black";
+    });
+  </script>
+
+</body>
+</html>

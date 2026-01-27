@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callback to Promise</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Convert Callback to Promise</h2>
+  <button id="btn">Run Promise</button>
+  <p id="msg"></p>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const msg = document.getElementById("msg");
+
+    function doAfter2SecondsPromise() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Promise resolved after 2 seconds!");
+        }, 2000);
+      });
+    }
+
+    btn.addEventListener("click", () => {
+      msg.textContent = "Waiting.....";
+
+      doAfter2SecondsPromise().then((result) => {
+        msg.textContent = result;
+      });
+    });
+  </script>
+
+</body>
+</html>

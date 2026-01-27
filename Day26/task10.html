@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>innerHTML Example</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    div {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Insert HTML using innerHTML ✨</h2>
+
+  <button id="showBtn">Show Message</button>
+
+  <div id="box"></div>
+
+  <script>
+    const showBtn = document.getElementById("showBtn");
+    const box = document.getElementById("box");
+
+    showBtn.addEventListener("click", () => {
+      box.innerHTML = "<b>Hello!</b> This is <i>formatted text</i> ";
+    });
+  </script>
+
+</body>
+</html>

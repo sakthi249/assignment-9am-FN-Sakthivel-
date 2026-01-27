@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>document</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Change Background Color </h2>
+
+  <button id="redBtn">Red</button>
+  <button id="greenBtn">Green</button>
+  <button id="blueBtn">Blue</button>
+  <button id="resetBtn">Reset</button>
+
+  <script>
+    document.getElementById("redBtn").addEventListener("click", () => {
+      document.body.style.backgroundColor = "red";
+    });
+
+    document.getElementById("greenBtn").addEventListener("click", () => {
+      document.body.style.backgroundColor = "green";
+    });
+
+    document.getElementById("blueBtn").addEventListener("click", () => {
+      document.body.style.backgroundColor = "lightblue";
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.body.style.backgroundColor = "white";
+    });
+  </script>
+
+</body>
+</html>

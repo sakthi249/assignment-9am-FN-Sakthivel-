@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Input</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Text Update </h2>
+
+  <input type="text" id="inputBox" placeholder="Type something" />
+  <p>Output: <span id="outputText"></span></p>
+
+  <script>
+    const inputBox = document.getElementById("inputBox");
+    const outputText = document.getElementById("outputText");
+
+    inputBox.addEventListener("input", () => {
+      outputText.textContent = inputBox.value;
+    });
+  </script>
+
+</body>
+</html>

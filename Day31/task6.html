@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>documentr</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Fetch and Display User List</h2>
+  <button id="btn">Load Users</button>
+  <ul id="list"></ul>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const list = document.getElementById("list");
+
+    btn.addEventListener("click", async () => {
+      list.innerHTML = "<li>Loading...</li>";
+
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        const data = await res.json();
+
+        list.innerHTML = "";
+
+        data.forEach((user) => {
+          const li = document.createElement("li");
+          li.textContent = user.name + " - " + user.email;
+          list.appendChild(li);
+        });
+      } catch (error) {
+        list.innerHTML = "<li>Error loading users!</li>";
+      }
+    });
+  </script>
+
+</body>
+</html>

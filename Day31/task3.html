@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Convert Object to JSON</h2>
+  <button id="btn">Convert</button>
+  <pre id="output"></pre>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", () => {
+      const user = { name: "Sakthivel", age: 21, city: "Chennai" };
+      const json = JSON.stringify(user);
+      output.textContent = json;
+    });
+  </script>
+
+</body>
+</html>

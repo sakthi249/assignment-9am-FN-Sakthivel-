@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Status</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Login Status using localStorage</h2>
+
+  <h3 id="status"></h3>
+
+  <button id="loginBtn">Login</button>
+  <button id="logoutBtn">Logout</button>
+
+  <script>
+    const status = document.getElementById("status");
+
+    function showStatus() {
+      const value = localStorage.getItem("loggedIn");
+      status.textContent = value === "true" ? "Logged In ✅" : "Logged Out ❌";
+    }
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      localStorage.setItem("loggedIn", "true");
+      showStatus();
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.setItem("loggedIn", "false");
+      showStatus();
+    });
+
+    showStatus();
+  </script>
+
+</body>
+</html>

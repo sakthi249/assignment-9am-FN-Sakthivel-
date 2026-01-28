@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+  <style>
+    body { font-family: Arial; padding: 30px; transition: 0.3s; }
+    .dark { background: black; color: white; }
+  </style>
+</head>
+<body>
+
+  <h2>Theme Switcher</h2>
+  <button id="btn">Toggle Theme</button>
+
+  <script>
+    function applyTheme() {
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark") document.body.classList.add("dark");
+      else document.body.classList.remove("dark");
+    }
+
+    document.getElementById("btn").addEventListener("click", () => {
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "light" : "dark");
+      applyTheme();
+    });
+
+    applyTheme();
+  </script>
+
+</body>
+</html>

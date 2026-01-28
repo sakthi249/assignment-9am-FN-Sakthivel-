@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Cart Items using JSON + localStorage</h2>
+
+  <button id="addApple">Add Apple</button>
+  <button id="addMango">Add Mango</button>
+  <button id="clear">Clear Cart</button>
+
+  <ul id="cart"></ul>
+
+  <script>
+    const cartUI = document.getElementById("cart");
+
+    function getCart() {
+      const data = localStorage.getItem("cartItems");
+      return data ? JSON.parse(data) : [];
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      cartUI.innerHTML = "";
+
+      if (cart.length === 0) {
+        cartUI.innerHTML = "<li>Cart is empty</li>";
+        return;
+      }
+
+      cart.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        cartUI.appendChild(li);
+      });
+    }
+
+    document.getElementById("addApple").addEventListener("click", () => {
+      const cart = getCart();
+      cart.push("Apple");
+      saveCart(cart);
+      renderCart();
+    });
+
+    document.getElementById("addMango").addEventListener("click", () => {
+      const cart = getCart();
+      cart.push("Mango");
+      saveCart(cart);
+      renderCart();
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+      localStorage.removeItem("cartItems");
+      renderCart();
+    });
+
+    renderCart();
+  </script>
+
+</body>
+</html>

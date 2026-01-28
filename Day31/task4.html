@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document</title>
+</head>
+<body style="font-family: Arial; padding: 30px;">
+
+  <h2>Store and Retrieve localStorage</h2>
+
+  <input type="text" id="input" placeholder="Enter name" />
+  <button id="saveBtn">Save</button>
+  <button id="getBtn">Get</button>
+
+  <h3 id="output"></h3>
+
+  <script>
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      localStorage.setItem("username", input.value);
+      output.textContent = "Saved!";
+    });
+
+    document.getElementById("getBtn").addEventListener("click", () => {
+      const name = localStorage.getItem("username");
+      output.textContent = "Stored Name: " + name;
+    });
+  </script>
+
+</body>
+</html>
